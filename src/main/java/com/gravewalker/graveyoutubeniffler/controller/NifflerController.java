@@ -21,6 +21,7 @@ public class NifflerController {
     @ResponseStatus(HttpStatus.OK)
     public void getVideos(@RequestParam String playlistId, HttpServletResponse response) throws IOException {
         String api_key = System.getenv().get("API_KEY");
+        System.out.println(api_key);
         String url = "https://www.googleapis.com/youtube/v3/playlistItems?" +
                 "part=snippet&" +
                 "playlistId=" + playlistId +
