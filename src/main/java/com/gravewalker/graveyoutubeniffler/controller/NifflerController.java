@@ -49,7 +49,10 @@ public class NifflerController {
     @GetMapping("/videos")
     @ResponseStatus(HttpStatus.OK)
     public void getVideos(@RequestParam String[] videoIds, HttpServletResponse response) throws IOException {
-        StringBuilder url = new StringBuilder("https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics");
+        StringBuilder url = new StringBuilder("https://www.googleapis.com/youtube/v3/videos" +
+                "?part=snippet" +
+                "&part=statistics" +
+                "&part=contentDetails");
         for (String id: videoIds) {
             url.append("&id=").append(id);
         }
