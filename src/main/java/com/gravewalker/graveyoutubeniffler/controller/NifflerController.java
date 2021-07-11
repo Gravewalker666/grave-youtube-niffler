@@ -25,6 +25,7 @@ public class NifflerController {
         String url = "https://www.googleapis.com/youtube/v3/playlistItems?" +
                 "part=snippet&" +
                 "playlistId=" + playlistId +
+                "&maxResults=50" +
                 "&key=" + api_key;
 
         HttpClient httpClient = HttpClients.createDefault();
